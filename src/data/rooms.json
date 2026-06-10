@@ -1,0 +1,1562 @@
+[
+  {
+    "id": "canteen-1",
+    "name": "Talabalar oshxonasi",
+    "building": "Talabalar oshxonasi",
+    "floor": 1,
+    "type": "oshxona",
+    "capacity": 200,
+    "icon": "restaurant",
+    "description": "Talabalar va o'qituvchilar uchun umumiy ovqatlanish joyi."
+  },
+  {
+    "id": "office_rektoriat",
+    "name": "Rektor qabulxonasi",
+    "building": "1-o'quv binosi (Bosh bino)",
+    "floor": 2,
+    "type": "ofis",
+    "capacity": 20,
+    "icon": "business",
+    "description": "Universitet rektorining qabulxonasi va boshqaruv ofisi."
+  },
+  {
+    "id": "office_dekanat",
+    "name": "Fakultet dekanati",
+    "building": "1-o'quv binosi (Bosh bino)",
+    "floor": 2,
+    "type": "ofis",
+    "capacity": 15,
+    "icon": "business",
+    "description": "Fakultet dekanati va o'quv ishlari bo'limi."
+  },
+  {
+    "id": "room_sport",
+    "name": "Sport majmuasi",
+    "building": "Sport binosi",
+    "floor": 1,
+    "type": "sport",
+    "capacity": 500,
+    "icon": "sports-basketball",
+    "description": "Katta sport zali"
+  },
+  {
+    "id": "room_lib",
+    "name": "Markaziy kutubxona",
+    "building": "Kutubxona binosi",
+    "floor": 2,
+    "type": "kutubxona",
+    "capacity": 200,
+    "icon": "local-library",
+    "description": "Bosh kutubxona va o'quv zali"
+  },
+  {
+    "id": "room_101",
+    "name": "101-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_102",
+    "name": "102-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_103",
+    "name": "103-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_104",
+    "name": "104-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_105",
+    "name": "105-Laboratoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "laboratoriya",
+    "capacity": 25,
+    "icon": "science",
+    "description": "Amaliy laboratoriya mashg'ulotlari uchun"
+  },
+  {
+    "id": "room_106",
+    "name": "106-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_107",
+    "name": "107-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_108",
+    "name": "108-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_109",
+    "name": "109-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_110",
+    "name": "110-Ma'ruza zali",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 80,
+    "icon": "school",
+    "description": "Katta potoklar uchun ma'ruzalar zali"
+  },
+  {
+    "id": "room_111",
+    "name": "111-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_112",
+    "name": "112-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_113",
+    "name": "113-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_114",
+    "name": "114-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_115",
+    "name": "115-Laboratoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "laboratoriya",
+    "capacity": 25,
+    "icon": "science",
+    "description": "Amaliy laboratoriya mashg'ulotlari uchun"
+  },
+  {
+    "id": "room_116",
+    "name": "116-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_117",
+    "name": "117-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_118",
+    "name": "118-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_119",
+    "name": "119-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_120",
+    "name": "120-Ma'ruza zali",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 80,
+    "icon": "school",
+    "description": "Katta potoklar uchun ma'ruzalar zali"
+  },
+  {
+    "id": "room_121",
+    "name": "121-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_122",
+    "name": "122-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_123",
+    "name": "123-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_124",
+    "name": "124-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_125",
+    "name": "125-Laboratoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "laboratoriya",
+    "capacity": 25,
+    "icon": "science",
+    "description": "Amaliy laboratoriya mashg'ulotlari uchun"
+  },
+  {
+    "id": "room_126",
+    "name": "126-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_127",
+    "name": "127-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_128",
+    "name": "128-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_129",
+    "name": "129-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_130",
+    "name": "130-Ma'ruza zali",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 80,
+    "icon": "school",
+    "description": "Katta potoklar uchun ma'ruzalar zali"
+  },
+  {
+    "id": "room_131",
+    "name": "131-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_132",
+    "name": "132-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_133",
+    "name": "133-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_134",
+    "name": "134-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_135",
+    "name": "135-Laboratoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "laboratoriya",
+    "capacity": 25,
+    "icon": "science",
+    "description": "Amaliy laboratoriya mashg'ulotlari uchun"
+  },
+  {
+    "id": "room_136",
+    "name": "136-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_137",
+    "name": "137-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_138",
+    "name": "138-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_139",
+    "name": "139-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_140",
+    "name": "140-Ma'ruza zali",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 80,
+    "icon": "school",
+    "description": "Katta potoklar uchun ma'ruzalar zali"
+  },
+  {
+    "id": "room_141",
+    "name": "141-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_142",
+    "name": "142-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_143",
+    "name": "143-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_144",
+    "name": "144-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_145",
+    "name": "145-Laboratoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "laboratoriya",
+    "capacity": 25,
+    "icon": "science",
+    "description": "Amaliy laboratoriya mashg'ulotlari uchun"
+  },
+  {
+    "id": "room_146",
+    "name": "146-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_147",
+    "name": "147-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_148",
+    "name": "148-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_149",
+    "name": "149-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_150",
+    "name": "150-Ma'ruza zali",
+    "building": "1-o'quv binosi",
+    "floor": 1,
+    "type": "auditoriya",
+    "capacity": 80,
+    "icon": "school",
+    "description": "Katta potoklar uchun ma'ruzalar zali"
+  },
+  {
+    "id": "room_151",
+    "name": "201-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_152",
+    "name": "202-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_153",
+    "name": "203-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_154",
+    "name": "204-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_155",
+    "name": "205-Laboratoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "laboratoriya",
+    "capacity": 25,
+    "icon": "science",
+    "description": "Amaliy laboratoriya mashg'ulotlari uchun"
+  },
+  {
+    "id": "room_156",
+    "name": "206-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_157",
+    "name": "207-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_158",
+    "name": "208-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_159",
+    "name": "209-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_160",
+    "name": "210-Ma'ruza zali",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 80,
+    "icon": "school",
+    "description": "Katta potoklar uchun ma'ruzalar zali"
+  },
+  {
+    "id": "room_161",
+    "name": "211-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_162",
+    "name": "212-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_163",
+    "name": "213-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_164",
+    "name": "214-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_165",
+    "name": "215-Laboratoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "laboratoriya",
+    "capacity": 25,
+    "icon": "science",
+    "description": "Amaliy laboratoriya mashg'ulotlari uchun"
+  },
+  {
+    "id": "room_166",
+    "name": "216-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_167",
+    "name": "217-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_168",
+    "name": "218-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_169",
+    "name": "219-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_170",
+    "name": "220-Ma'ruza zali",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 80,
+    "icon": "school",
+    "description": "Katta potoklar uchun ma'ruzalar zali"
+  },
+  {
+    "id": "room_171",
+    "name": "221-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_172",
+    "name": "222-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_173",
+    "name": "223-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_174",
+    "name": "224-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_175",
+    "name": "225-Laboratoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "laboratoriya",
+    "capacity": 25,
+    "icon": "science",
+    "description": "Amaliy laboratoriya mashg'ulotlari uchun"
+  },
+  {
+    "id": "room_176",
+    "name": "226-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_177",
+    "name": "227-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_178",
+    "name": "228-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_179",
+    "name": "229-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_180",
+    "name": "230-Ma'ruza zali",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 80,
+    "icon": "school",
+    "description": "Katta potoklar uchun ma'ruzalar zali"
+  },
+  {
+    "id": "room_181",
+    "name": "231-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_182",
+    "name": "232-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_183",
+    "name": "233-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_184",
+    "name": "234-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_185",
+    "name": "235-Laboratoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "laboratoriya",
+    "capacity": 25,
+    "icon": "science",
+    "description": "Amaliy laboratoriya mashg'ulotlari uchun"
+  },
+  {
+    "id": "room_186",
+    "name": "236-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_187",
+    "name": "237-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_188",
+    "name": "238-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_189",
+    "name": "239-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_190",
+    "name": "240-Ma'ruza zali",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 80,
+    "icon": "school",
+    "description": "Katta potoklar uchun ma'ruzalar zali"
+  },
+  {
+    "id": "room_191",
+    "name": "241-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_192",
+    "name": "242-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_193",
+    "name": "243-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_194",
+    "name": "244-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_195",
+    "name": "245-Laboratoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "laboratoriya",
+    "capacity": 25,
+    "icon": "science",
+    "description": "Amaliy laboratoriya mashg'ulotlari uchun"
+  },
+  {
+    "id": "room_196",
+    "name": "246-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_197",
+    "name": "247-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_198",
+    "name": "248-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_199",
+    "name": "249-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_200",
+    "name": "250-Ma'ruza zali",
+    "building": "1-o'quv binosi",
+    "floor": 2,
+    "type": "auditoriya",
+    "capacity": 80,
+    "icon": "school",
+    "description": "Katta potoklar uchun ma'ruzalar zali"
+  },
+  {
+    "id": "room_201",
+    "name": "301-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_202",
+    "name": "302-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_203",
+    "name": "303-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_204",
+    "name": "304-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_205",
+    "name": "305-Laboratoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "laboratoriya",
+    "capacity": 25,
+    "icon": "science",
+    "description": "Amaliy laboratoriya mashg'ulotlari uchun"
+  },
+  {
+    "id": "room_206",
+    "name": "306-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_207",
+    "name": "307-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_208",
+    "name": "308-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_209",
+    "name": "309-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_210",
+    "name": "310-Ma'ruza zali",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 80,
+    "icon": "school",
+    "description": "Katta potoklar uchun ma'ruzalar zali"
+  },
+  {
+    "id": "room_211",
+    "name": "311-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_212",
+    "name": "312-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_213",
+    "name": "313-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_214",
+    "name": "314-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_215",
+    "name": "315-Laboratoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "laboratoriya",
+    "capacity": 25,
+    "icon": "science",
+    "description": "Amaliy laboratoriya mashg'ulotlari uchun"
+  },
+  {
+    "id": "room_216",
+    "name": "316-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_217",
+    "name": "317-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_218",
+    "name": "318-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_219",
+    "name": "319-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_220",
+    "name": "320-Ma'ruza zali",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 80,
+    "icon": "school",
+    "description": "Katta potoklar uchun ma'ruzalar zali"
+  },
+  {
+    "id": "room_221",
+    "name": "321-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_222",
+    "name": "322-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_223",
+    "name": "323-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_224",
+    "name": "324-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_225",
+    "name": "325-Laboratoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "laboratoriya",
+    "capacity": 25,
+    "icon": "science",
+    "description": "Amaliy laboratoriya mashg'ulotlari uchun"
+  },
+  {
+    "id": "room_226",
+    "name": "326-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_227",
+    "name": "327-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_228",
+    "name": "328-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_229",
+    "name": "329-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_230",
+    "name": "330-Ma'ruza zali",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 80,
+    "icon": "school",
+    "description": "Katta potoklar uchun ma'ruzalar zali"
+  },
+  {
+    "id": "room_231",
+    "name": "331-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_232",
+    "name": "332-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_233",
+    "name": "333-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_234",
+    "name": "334-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_235",
+    "name": "335-Laboratoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "laboratoriya",
+    "capacity": 25,
+    "icon": "science",
+    "description": "Amaliy laboratoriya mashg'ulotlari uchun"
+  },
+  {
+    "id": "room_236",
+    "name": "336-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_237",
+    "name": "337-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_238",
+    "name": "338-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_239",
+    "name": "339-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_240",
+    "name": "340-Ma'ruza zali",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 80,
+    "icon": "school",
+    "description": "Katta potoklar uchun ma'ruzalar zali"
+  },
+  {
+    "id": "room_241",
+    "name": "341-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_242",
+    "name": "342-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_243",
+    "name": "343-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_244",
+    "name": "344-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_245",
+    "name": "345-Laboratoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "laboratoriya",
+    "capacity": 25,
+    "icon": "science",
+    "description": "Amaliy laboratoriya mashg'ulotlari uchun"
+  },
+  {
+    "id": "room_246",
+    "name": "346-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_247",
+    "name": "347-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_248",
+    "name": "348-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_249",
+    "name": "349-Auditoriya",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 30,
+    "icon": "school",
+    "description": "Amaliy mashg'ulotlar uchun"
+  },
+  {
+    "id": "room_250",
+    "name": "350-Ma'ruza zali",
+    "building": "1-o'quv binosi",
+    "floor": 3,
+    "type": "auditoriya",
+    "capacity": 80,
+    "icon": "school",
+    "description": "Katta potoklar uchun ma'ruzalar zali"
+  },
+  {
+    "id": "room_251",
+    "name": "400-Ma'ruza zali",
+    "building": "1-o'quv binosi",
+    "floor": 4,
+    "type": "auditoriya",
+    "capacity": 80,
+    "icon": "school",
+    "description": "Katta potoklar uchun ma'ruzalar zali"
+  }
+]

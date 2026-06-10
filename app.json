@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "NDTU Navigator",
+    "slug": "ndtu-navigator",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0A0E1A"
+    },
+    "platforms": [
+      "android"
+    ],
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0A0E1A"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.ndtu.ndtunavigator",
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ]
+    },
+    "extra": {
+      "eas": {
+        "projectId": "b6bb3ae6-ecf6-41f5-94c1-445160e74018"
+      }
+    },
+    "plugins": [
+      "expo-font"
+    ],
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/b6bb3ae6-ecf6-41f5-94c1-445160e74018"
+    },
+    "ios": {}
+  }
+}

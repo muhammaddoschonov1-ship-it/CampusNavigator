@@ -1,0 +1,27 @@
+{
+  "default": {
+    "1": [
+      { "id": 1, "time": "08:30 - 09:50", "subject": "Dasturlash asoslari", "room": "1-qavat 101-Auditoriya", "type": "Ma'ruza", "startTime": "08:30", "endTime": "09:50" },
+      { "id": 2, "time": "10:00 - 11:20", "subject": "Oliy matematika", "room": "2-qavat 205-Auditoriya", "type": "Amaliyot", "startTime": "10:00", "endTime": "11:20" },
+      { "id": 3, "time": "11:30 - 12:50", "subject": "Fizika", "room": "Fizika laboratoriyasi", "type": "Laboratoriya", "startTime": "11:30", "endTime": "12:50" }
+    ],
+    "2": [
+      { "id": 1, "time": "08:30 - 09:50", "subject": "Ingliz tili", "room": "Konferents zal", "type": "Amaliyot", "startTime": "08:30", "endTime": "09:50" },
+      { "id": 2, "time": "10:00 - 11:20", "subject": "Ma'lumotlar bazasi", "room": "Informatika laboratoriyasi", "type": "Ma'ruza", "startTime": "10:00", "endTime": "11:20" }
+    ],
+    "3": [
+      { "id": 1, "time": "10:00 - 11:20", "subject": "Kompyuter tarmoqlari", "room": "2-qavat 205-Auditoriya", "type": "Ma'ruza", "startTime": "10:00", "endTime": "11:20" },
+      { "id": 2, "time": "11:30 - 12:50", "subject": "Veb dasturlash", "room": "Informatika laboratoriyasi", "type": "Amaliyot", "startTime": "11:30", "endTime": "12:50" }
+    ],
+    "4": [
+      { "id": 1, "time": "08:30 - 09:50", "subject": "Falsafa", "room": "Markaziy kutubxona", "type": "Ma'ruza", "startTime": "08:30", "endTime": "09:50" },
+      { "id": 2, "time": "10:00 - 11:20", "subject": "Tarix", "room": "1-qavat 101-Auditoriya", "type": "Ma'ruza", "startTime": "10:00", "endTime": "11:20" }
+    ],
+    "5": [
+      { "id": 1, "time": "08:30 - 09:50", "subject": "Jismoniy tarbiya", "room": "Sport majmuasi", "type": "Amaliyot", "startTime": "08:30", "endTime": "09:50" },
+      { "id": 2, "time": "10:00 - 11:20", "subject": "Algoritmlar", "room": "2-qavat 205-Auditoriya", "type": "Laboratoriya", "startTime": "10:00", "endTime": "11:20" }
+    ],
+    "6": [],
+    "0": []
+  }
+}

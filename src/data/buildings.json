@@ -1,0 +1,178 @@
+[
+  {
+    "id": "ndtu-1",
+    "name": "1-o'quv binosi (Bosh bino)",
+    "nameRu": "1-й учебный корпус (Главный)",
+    "lat": 42.4618934,
+    "lng": 59.6214471,
+    "address": "A. Dosnazarov ko'chasi, 74",
+    "type": "university",
+    "icon": "🏛️",
+    "color": "#6C63FF"
+  },
+  {
+    "id": "ndtu-2",
+    "name": "2-o'quv binosi",
+    "nameRu": "2-й учебный корпус",
+    "lat": 42.4647047,
+    "lng": 59.6208847,
+    "address": "T. Kayipbergenov ko'chasi, 26",
+    "type": "university",
+    "icon": "🏢",
+    "color": "#63B3ED"
+  },
+  {
+    "id": "ndtu-3",
+    "name": "3-o'quv binosi",
+    "nameRu": "3-й учебный корпус",
+    "lat": 42.4137278,
+    "lng": 59.6185009,
+    "address": "A. Utepov ko'chasi, 10",
+    "type": "university",
+    "icon": "🎓",
+    "color": "#10B981"
+  },
+  {
+    "id": "ndtu-politex",
+    "name": "1-son politexnikum",
+    "nameRu": "Политехникум №1",
+    "lat": 42.4142,
+    "lng": 59.6191,
+    "address": "A. Utepov ko'chasi (NDTU tarkibida)",
+    "type": "college",
+    "icon": "🔧",
+    "color": "#F59E0B"
+  },
+  {
+    "id": "ndtu-tatu-pidakar",
+    "name": "TATU Nukus filiali (Pidakar)",
+    "nameRu": "Филиал ТАТУ (Пиджакар)",
+    "lat": 42.4432149,
+    "lng": 59.6097116,
+    "address": "Pidakar ko'chasi, 10",
+    "type": "university",
+    "icon": "💻",
+    "color": "#E879F9"
+  },
+  {
+    "id": "ndtu-tatu-tan",
+    "name": "TATU Nukus (Tan Zhuldyzy)",
+    "nameRu": "Филиал ТАТУ (Тан Жулдызы)",
+    "lat": 42.4409509,
+    "lng": 59.6092206,
+    "address": "Tan Zhuldyzy ko'chasi",
+    "type": "university",
+    "icon": "🖥️",
+    "color": "#A78BFA"
+  },
+  {
+    "id": "ndtu-gate",
+    "name": "Asosiy kirish",
+    "nameRu": "Главный вход",
+    "lat": 42.46125,
+    "lng": 59.6219,
+    "address": "Dosnazarov ko'chasi qarshisi",
+    "type": "entrance",
+    "icon": "🚪",
+    "color": "#94A3B8"
+  },
+  {
+    "id": "ndtu-library",
+    "name": "Markaziy kutubxona",
+    "nameRu": "Центральная библиотека",
+    "lat": 42.46195,
+    "lng": 59.62115,
+    "address": "1-o'quv bino yaqinida",
+    "type": "library",
+    "icon": "📚",
+    "color": "#00D4AA"
+  },
+  {
+    "id": "ndtu-canteen",
+    "name": "Talabalar oshxonasi",
+    "nameRu": "Столовая",
+    "lat": 42.46415,
+    "lng": 59.62055,
+    "address": "2-o'quv bino yaqinida",
+    "type": "canteen",
+    "icon": "🍽️",
+    "color": "#FFB347"
+  },
+  {
+    "id": "ndtu-sport",
+    "name": "Sport majmuasi",
+    "nameRu": "Спортивный комплекс",
+    "lat": 42.46505,
+    "lng": 59.62025,
+    "address": "Kayipbergenov ko'chasi hududi",
+    "type": "sport",
+    "icon": "🏋️",
+    "color": "#FF6B6B"
+  },
+  {
+    "id": "ndtu-dorm",
+    "name": "Talabalar yotoqxonasi",
+    "nameRu": "Общежитие",
+    "lat": 42.46055,
+    "lng": 59.62215,
+    "address": "Asosiy kampus janubi",
+    "type": "dormitory",
+    "icon": "🏠",
+    "color": "#A78BFA"
+  },
+  {
+    "id": "ndtu-it-lab",
+    "name": "IT va axborot texnologiyalari",
+    "nameRu": "ИТ и информационные технологии",
+    "lat": 42.46435,
+    "lng": 59.62105,
+    "address": "2-o'quv bino",
+    "type": "faculty",
+    "icon": "💻",
+    "color": "#38BDF8"
+  },
+  {
+    "id": "ndtu-mining",
+    "name": "Konchilik va metallurgiya",
+    "nameRu": "Горное дело и металлургия",
+    "lat": 42.46215,
+    "lng": 59.62175,
+    "address": "1-o'quv bino",
+    "type": "faculty",
+    "icon": "⛏️",
+    "color": "#78716C"
+  },
+  {
+    "id": "ndtu-engineering",
+    "name": "Ilg'or muhandislik maktabi",
+    "nameRu": "Школа передовой инженерии",
+    "lat": 42.46255,
+    "lng": 59.62135,
+    "address": "1-o'quv bino",
+    "type": "faculty",
+    "icon": "🔬",
+    "color": "#F472B6"
+  },
+  {
+    "id": "ndtu-rektorat",
+    "name": "Rektorat",
+    "nameRu": "Ректорат",
+    "lat": 42.46205,
+    "lng": 59.62155,
+    "address": "1-o'quv bino, 3-qavat",
+    "type": "office",
+    "icon": "🏛️",
+    "color": "#818CF8"
+  },
+  {
+    "id": "ndtu-medical",
+    "name": "Tibbiyot punkti",
+    "nameRu": "Медпункт",
+    "lat": 42.46165,
+    "lng": 59.62125,
+    "address": "1-o'quv bino",
+    "type": "medical",
+    "icon": "🏥",
+    "color": "#F87171"
+  }
+]
