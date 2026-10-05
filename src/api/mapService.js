@@ -17,47 +17,53 @@ const BUILDINGS_COLLECTION = 'buildings';
 const MAP_STORAGE_KEY = '@ndtu_buildings';
 let useFirebase = true;
 
-// Agar firebase yoqilgan bo'lsa firebase'dan, bo'lmasa localdan oladi
+// Tezkor kesh va xavfsiz timeout bilan binolarni olish
 export const getBuildings = async () => {
+  let initialData = buildingsLocal;
   try {
     const cachedData = await AsyncStorage.getItem(MAP_STORAGE_KEY);
-    if (cachedData && !useFirebase) {
-      return JSON.parse(cachedData);
+    if (cachedData) {
+      initialData = JSON.parse(cachedData);
     }
+  } catch (e) {}
 
-    if (useFirebase) {
-      try {
-        const snapshot = await getDocs(collection(db, BUILDINGS_COLLECTION));
-        let buildings = snapshot.docs.map(doc => ({
-          id: doc.id,
-          ...doc.data()
-        }));
+  if (!useFirebase) {
+    return initialData;
+  }
 
-        // Agar bazada 5 tadan kam bino bo'lsa (yoki bo'sh bo'lsa), default binolarni bazaga yozib yuboramiz
-        if (buildings.length < 5) {
-          console.log("Firebase bino bazasi bo'sh yoki kam, local binolar yuklanmoqda...");
-          const { setDoc } = require('firebase/firestore');
-          
+  // Firebase'dan olish (3.5 soniya timeout bilan, shunda ekran qotib qolmaydi)
+  try {
+    const fetchPromise = getDocs(collection(db, BUILDINGS_COLLECTION));
+    const timeoutPromise = new Promise((_, reject) =>
+      setTimeout(() => reject(new Error('Firebase timeout')), 3500)
+    );
+
+    const snapshot = await Promise.race([fetchPromise, timeoutPromise]);
+    let buildings = snapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    }));
+
+    if (buildings.length >= 5) {
+      await AsyncStorage.setItem(MAP_STORAGE_KEY, JSON.stringify(buildings));
+      return buildings;
+    } else {
+      // Backgroundda default binolarni bazaga yuklab qo'yish (foydalanuvchini kutdirmaydi)
+      setTimeout(async () => {
+        try {
           for (const bld of buildingsLocal) {
             const bldExists = buildings.find(b => b.id === bld.id || b.name === bld.name);
             if (!bldExists) {
               await setDoc(doc(db, BUILDINGS_COLLECTION, bld.id), bld);
-              buildings.push(bld);
             }
           }
-        }
-
-        await AsyncStorage.setItem(MAP_STORAGE_KEY, JSON.stringify(buildings));
-        return buildings;
-      } catch (err) {
-        console.warn("Firebase fetching failed, using local JSON", err);
-      }
+        } catch (e) {}
+      }, 100);
+      return initialData;
     }
-    await AsyncStorage.setItem(MAP_STORAGE_KEY, JSON.stringify(buildingsLocal));
-    return buildingsLocal;
-  } catch (error) {
-    console.warn("Error loading buildings:", error);
-    return buildingsLocal;
+  } catch (err) {
+    // Timeout yoki tarmoq xatosi bo'lsa kesh/local qaytariladi
+    return initialData;
   }
 };
 

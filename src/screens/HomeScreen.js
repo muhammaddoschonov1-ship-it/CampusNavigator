@@ -17,6 +17,7 @@ import { useTheme } from '../theme/ThemeContext';
 import { useLanguage } from '../theme/LanguageContext';
 import { spacing, borderRadius, typography } from '../theme/colors';
 import { useIsFocused } from '@react-navigation/native';
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import SearchBar from '../components/SearchBar';
 import LeafletMap from '../components/LeafletMap';
@@ -28,10 +29,12 @@ const { width } = Dimensions.get('window');
 export default function HomeScreen({ navigation, user, onLogout }) {
   const { colors, isDark } = useTheme();
   const { t, language } = useLanguage();
+  const insets = useSafeAreaInsets();
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const slideAnim = useRef(new Animated.Value(30)).current;
   const [searchQuery, setSearchQuery] = useState('');
   const [mapView, setMapView] = useState('real');
+  const [isMapActive, setIsMapActive] = useState(false);
   const [rooms, setRooms] = useState([]);
   const [scheduleData, setScheduleData] = useState(null);
   const popularRooms = [...rooms]
@@ -220,14 +223,19 @@ export default function HomeScreen({ navigation, user, onLogout }) {
   const styles = createStyles(colors);
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView edges={['top']} style={styles.container}>
       <StatusBar
         barStyle={isDark ? 'light-content' : 'dark-content'}
         backgroundColor={colors.background}
+        translucent={false}
       />
       <ScrollView
         style={styles.scrollView}
-        contentContainerStyle={styles.scrollContent}
+        contentContainerStyle={[
+          styles.scrollContent,
+          { paddingTop: 16 },
+        ]}
+        scrollEnabled={!isMapActive}
         showsVerticalScrollIndicator={false}
       >
         {/* Header */}
@@ -312,6 +320,7 @@ export default function HomeScreen({ navigation, user, onLogout }) {
               <LeafletMap
                 onBuildingPress={handleBuildingPress}
                 language={language}
+                onMapTouch={setIsMapActive}
               />
             </View>
           ) : (
@@ -402,7 +411,7 @@ export default function HomeScreen({ navigation, user, onLogout }) {
 
         <View style={{ height: 100 }} />
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
 

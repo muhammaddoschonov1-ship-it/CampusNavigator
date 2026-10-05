@@ -123,6 +123,11 @@ export default function AppNavigator() {
           options={{ animation: 'slide_from_right' }}
         />
         <Stack.Screen
+          name="MapEditor"
+          component={MapEditorScreen}
+          options={{ animation: 'slide_from_right' }}
+        />
+        <Stack.Screen
           name="MapTab"
           component={MapEditorScreen}
           options={{ animation: 'slide_from_right' }}

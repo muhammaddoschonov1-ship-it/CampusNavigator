@@ -21,6 +21,7 @@ if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental
 }
 import { MaterialIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useTheme } from '../theme/ThemeContext';
 import { useLanguage } from '../theme/LanguageContext';
@@ -268,14 +269,26 @@ export default function AdminScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle={isDark ? 'light-content' : 'dark-content'} backgroundColor={colors.background} />
+      <StatusBar barStyle={isDark ? 'light-content' : 'dark-content'} backgroundColor={colors.surface} />
 
       {/* Header */}
-      <View style={styles.header}>
-        <View>
-          <Text style={styles.headerTitle}>Boshqaruv Paneli</Text>
+      <SafeAreaView edges={['top']} style={{ backgroundColor: colors.surface }}>
+        <View style={styles.header}>
+          <View>
+            <Text style={styles.headerTitle}>Boshqaruv Paneli</Text>
+          </View>
+          {activeTab === 'map' && (
+            <TouchableOpacity
+              style={styles.openFullscreenBtn}
+              onPress={() => navigation.navigate('MapEditor')}
+              activeOpacity={0.8}
+            >
+              <MaterialIcons name="fullscreen" size={18} color="#FFF" />
+              <Text style={styles.openFullscreenBtnText}>Katta xarita</Text>
+            </TouchableOpacity>
+          )}
         </View>
-      </View>
+      </SafeAreaView>
 
       {/* Custom Tabs */}
       <View style={styles.tabRow}>
@@ -345,7 +358,7 @@ export default function AdminScreen({ navigation }) {
       </View>
 
       {/* Content Area */}
-      <View style={styles.content}>
+      <View style={[styles.content, activeTab === 'map' && { padding: 0 }]}>
         {isLoading && (
           <View style={styles.loaderContainer}>
             <ActivityIndicator size="large" color={colors.primary} />
@@ -434,7 +447,7 @@ export default function AdminScreen({ navigation }) {
 
         {/* Tab 3: Map Editor Embedded */}
         {activeTab === 'map' && (
-          <View style={{ flex: 1, borderRadius: borderRadius.xl, overflow: 'hidden', marginTop: 10 }}>
+          <View style={{ flex: 1, overflow: 'hidden' }}>
             <MapEditorScreen navigation={navigation} isEmbedded={true} />
           </View>
         )}
@@ -555,8 +568,31 @@ export default function AdminScreen({ navigation }) {
 const createStyles = (colors) =>
   StyleSheet.create({
     container: { flex: 1, backgroundColor: colors.background },
-    header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingTop: 60, paddingHorizontal: spacing.lg, paddingBottom: spacing.md, borderBottomWidth: 1, borderBottomColor: colors.border },
+    header: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      paddingHorizontal: spacing.lg,
+      paddingVertical: spacing.md,
+      backgroundColor: colors.surface,
+      borderBottomWidth: 1,
+      borderBottomColor: colors.border
+    },
     headerTitle: { ...typography.h1, color: colors.textPrimary },
+    openFullscreenBtn: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 4,
+      backgroundColor: colors.primary,
+      paddingHorizontal: 12,
+      paddingVertical: 6,
+      borderRadius: borderRadius.md,
+    },
+    openFullscreenBtnText: {
+      color: '#FFF',
+      fontSize: 12,
+      fontWeight: '700',
+    },
     headerSubtitle: { ...typography.caption, color: colors.textSecondary },
     adminBadge: { paddingHorizontal: 12, paddingVertical: 4, borderRadius: borderRadius.sm },
     adminBadgeText: { color: '#FFF', fontSize: 11, fontWeight: '800' },

@@ -15,42 +15,56 @@ import {
 } from 'firebase/auth';
 import { doc, setDoc, getDoc, updateDoc, serverTimestamp } from 'firebase/firestore';
 
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 // ====================================
 // 📝 Ro'yxatdan o'tish (Register)
 // ====================================
 export const registerUser = async ({ name, email, password, group }) => {
+  const cleanEmail = email.trim().toLowerCase();
   try {
     // Firebase Auth da foydalanuvchi yaratish
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    const userCredential = await createUserWithEmailAndPassword(auth, cleanEmail, password);
     const user = userCredential.user;
 
     // Profilga ism qo'shish
-    await updateProfile(user, { displayName: name });
+    try {
+      await updateProfile(user, { displayName: name });
+    } catch (e) {
+      console.warn("Auth updateProfile failed:", e);
+    }
 
-    // Firestore ga foydalanuvchi ma'lumotlarini saqlash
-    await setDoc(doc(db, 'users', user.uid), {
+    const userData = {
+      uid: user.uid,
       name,
-      email,
+      email: cleanEmail,
       group: group || '',
       role: 'student',
       avatar: null,
-      createdAt: serverTimestamp(),
-      lastLogin: serverTimestamp(),
-    });
+    };
+
+    // Firestore ga foydalanuvchi ma'lumotlarini saqlash
+    try {
+      await setDoc(doc(db, 'users', user.uid), {
+        ...userData,
+        createdAt: serverTimestamp(),
+        lastLogin: serverTimestamp(),
+      });
+    } catch (dbErr) {
+      console.warn("Firestore setDoc failed, saving locally:", dbErr);
+    }
+
+    // Har doim localga ham saqlaymiz
+    await AsyncStorage.setItem('@local_user_' + cleanEmail, JSON.stringify(userData));
 
     return {
       success: true,
-      user: {
-        uid: user.uid,
-        name,
-        email,
-        group,
-      },
+      user: userData,
     };
   } catch (error) {
     return {
       success: false,
-      error: getErrorMessage(error.code) + `\n\nSababi: ${error.message}`,
+      error: getErrorMessage(error.code) + (error.message ? `\n\n(${error.message})` : ''),
     };
   }
 };
@@ -59,38 +73,78 @@ export const registerUser = async ({ name, email, password, group }) => {
 // 🔑 Kirish (Login)
 // ====================================
 export const loginUser = async ({ email, password }) => {
+  const cleanEmail = email.trim().toLowerCase();
   try {
-    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    const userCredential = await signInWithEmailAndPassword(auth, cleanEmail, password);
     const user = userCredential.user;
 
-    // Firestore dan to'liq ma'lumotlarni olish
-    const userDoc = await getDoc(doc(db, 'users', user.uid));
-    const userData = userDoc.exists() ? userDoc.data() : {};
+    // Firestore dan ma'lumotlarni olish
+    let userData = {};
+    try {
+      const userDoc = await getDoc(doc(db, 'users', user.uid));
+      if (userDoc.exists()) {
+        userData = userDoc.data();
+      }
+    } catch (e) {
+      console.warn("Firestore getDoc failed:", e);
+    }
 
-    // Oxirgi kirish vaqtini yangilash (agar baza tozalanib ketgan bo'lsa, qayta yaratadi)
-    await setDoc(doc(db, 'users', user.uid), {
-      lastLogin: serverTimestamp(),
-      email: user.email,
+    // Local keshdan tekshirish
+    if (!userData.group || !userData.name) {
+      try {
+        const local = await AsyncStorage.getItem('@local_user_' + cleanEmail);
+        if (local) {
+          const parsed = JSON.parse(local);
+          userData = { ...parsed, ...userData };
+        }
+      } catch (e) {}
+    }
+
+    const finalUser = {
+      uid: user.uid,
       name: userData.name || user.displayName || 'Foydalanuvchi',
-      role: userData.role || 'student'
-    }, { merge: true });
+      email: user.email,
+      group: userData.group || '',
+      studentId: userData.studentId || '',
+      role: userData.role || (cleanEmail.includes('admin') ? 'admin' : 'student'),
+      avatar: userData.avatar || null,
+    };
+
+    // Firestore da lastLogin yangilash (xatolik bo'lsa to'xtatmaydi)
+    try {
+      await setDoc(doc(db, 'users', user.uid), {
+        lastLogin: serverTimestamp(),
+        email: user.email,
+        name: finalUser.name,
+        role: finalUser.role
+      }, { merge: true });
+    } catch (e) {}
+
+    // Keshni yangilaymiz
+    await AsyncStorage.setItem('@local_user_' + cleanEmail, JSON.stringify(finalUser));
 
     return {
       success: true,
-      user: {
-        uid: user.uid,
-        name: userData.name || user.displayName || 'Foydalanuvchi',
-        email: user.email,
-        group: userData.group || '',
-        studentId: userData.studentId || '',
-        role: userData.role || 'student',
-        avatar: userData.avatar || null,
-      },
+      user: finalUser,
     };
   } catch (error) {
+    // Agar internet yo'q bo'lsa yoki offline bo'lsa, local tekshiramiz
+    if (error.code === 'auth/network-request-failed') {
+      try {
+        const local = await AsyncStorage.getItem('@local_user_' + cleanEmail);
+        if (local) {
+          return {
+            success: true,
+            user: JSON.parse(local),
+            offline: true,
+          };
+        }
+      } catch (e) {}
+    }
+
     return {
       success: false,
-      error: getErrorMessage(error.code) + `\n\nSababi: ${error.message}`,
+      error: getErrorMessage(error.code) + (error.message ? `\n\n(${error.message})` : ''),
     };
   }
 };

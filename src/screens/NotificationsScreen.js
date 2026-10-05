@@ -8,6 +8,7 @@ import { useTheme } from '../theme/ThemeContext';
 import { useLanguage } from '../theme/LanguageContext';
 import { useAuth } from '../theme/AuthContext';
 import { spacing, borderRadius, typography } from '../theme/colors';
+import { sendTestNotification } from '../utils/notifications';
 
 const NOTIFS_UZ = [
   { id: '1', title: "Dars jadvali o'zgardi", message: "15-may kuni 3-para 205-auditoriyadan 101-auditoriyaga ko'chirildi.", icon: 'event-note', type: 'info', time: '10 daqiqa oldin', read: false },
@@ -100,6 +101,15 @@ export default function NotificationsScreen({ navigation }) {
     });
   };
 
+  const handleTestNotif = async () => {
+    const success = await sendTestNotification();
+    if (success) {
+      alert("Test bildirishnoma yuborildi! 🔔 Telefoningiz panelini tekshiring.");
+    } else {
+      alert("Bildirishnoma yuborishda ruxsat berilmadi yoki xatolik yuz berdi.");
+    }
+  };
+
   const getTypeColor = (type) => {
     switch (type) {
       case 'success': return colors.success;
@@ -151,12 +161,18 @@ export default function NotificationsScreen({ navigation }) {
         keyExtractor={(item) => item.id}
         ListHeaderComponent={
           <View style={styles.headerInfo}>
-            {unreadCount > 0 && (
-              <TouchableOpacity style={styles.markAllBtn} onPress={markAllAsRead} activeOpacity={0.7}>
-                <MaterialIcons name="done-all" size={18} color={colors.primary} />
-                <Text style={styles.markAllText}>{t.markAllRead}</Text>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: spacing.sm }}>
+              <TouchableOpacity style={[styles.markAllBtn, { marginBottom: 0 }]} onPress={handleTestNotif} activeOpacity={0.7}>
+                <MaterialIcons name="notifications-active" size={18} color={colors.primary} />
+                <Text style={styles.markAllText}>Test eslatma</Text>
               </TouchableOpacity>
-            )}
+              {unreadCount > 0 && (
+                <TouchableOpacity style={[styles.markAllBtn, { marginBottom: 0 }]} onPress={markAllAsRead} activeOpacity={0.7}>
+                  <MaterialIcons name="done-all" size={18} color={colors.primary} />
+                  <Text style={styles.markAllText}>{t.markAllRead}</Text>
+                </TouchableOpacity>
+              )}
+            </View>
             <Text style={styles.notifCount}>
               {unreadCount > 0 ? `${unreadCount} ${t.newNotifs}` : t.allRead}
             </Text>

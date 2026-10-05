@@ -12,9 +12,10 @@
 // 4. Berilgan config ma'lumotlarini pastga joylashtiring
 // ==========================================
 
-import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
+import { initializeApp, getApps, getApp } from 'firebase/app';
+import { initializeAuth, getAuth, getReactNativePersistence } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // 🔧 Firebase config — O'Z MA'LUMOTLARINGIZNI QO'YING
 const firebaseConfig = {
@@ -27,13 +28,21 @@ const firebaseConfig = {
   measurementId: "G-E1YH7C23S1"
 };
 
-// Firebase ishga tushirish
-const app = initializeApp(firebaseConfig);
+// Firebase ishga tushirish (mavjud bo'lsa qayta ishga tushirmaslik)
+const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
 
-// Auth
-const auth = getAuth(app);
+// React Native uchun AsyncStorage orqali doimiy autentifikatsiya
+let auth;
+try {
+  auth = initializeAuth(app, {
+    persistence: getReactNativePersistence(AsyncStorage),
+  });
+} catch (e) {
+  auth = getAuth(app);
+}
 
 // Firestore database
 const db = getFirestore(app);
 
 export { app, auth, db };
+

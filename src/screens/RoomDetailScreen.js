@@ -17,6 +17,7 @@ import { useLanguage } from '../theme/LanguageContext';
 import { spacing, borderRadius, typography } from '../theme/colors';
 import * as Location from 'expo-location';
 import NavigationMapView from '../components/NavigationMapView';
+import { NDTU } from '../data/ndtuCampus';
 
 const { width } = Dimensions.get('window');
 
@@ -106,27 +107,40 @@ export default function RoomDetailScreen({ route, navigation }) {
     setShowNavigation(true);
     setNavError('');
     
-    // Auto scroll down to map after layout is fully rendered
     setTimeout(() => {
       if (scrollViewRef.current) {
         scrollViewRef.current.scrollToEnd({ animated: true });
       }
-    }, 800);
+    }, 600);
 
     try {
       const { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== 'granted') {
-        setNavError('Joylashuvni aniqlashga ruxsat berilmadi.');
-        return;
-      }
-      
-      // Get initial position with highest accuracy
-      const loc = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.Highest });
-      setUserLocation({ lat: loc.coords.latitude, lng: loc.coords.longitude });
+      let pos = null;
+      if (status === 'granted') {
+        try {
+          pos = await Location.getLastKnownPositionAsync({});
+        } catch (e) {}
 
-      // Do NOT start watching user location in real-time, it causes WebView to reload its state entirely.
+        if (!pos) {
+          try {
+            pos = await Location.getCurrentPositionAsync({
+              accuracy: Location.Accuracy.Balanced,
+              timeout: 6000,
+            });
+          } catch (e) {}
+        }
+      }
+
+      if (pos && pos.coords) {
+        setUserLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude });
+      } else {
+        // Fallback: Agar GPS ruxsati yoki signali bo'lmasa, universitet darvozasidan boshlaymiz
+        setUserLocation(NDTU.gate);
+        setNavError("GPS aniqlanmadi. Asosiy darvozadan boshlab yo'l ko'rsatildi.");
+      }
     } catch (err) {
-      setNavError("Joylashuvni aniqlab bo'lmadi.");
+      setUserLocation(NDTU.gate);
+      setNavError("Asosiy darvozadan boshlab yo'l ko'rsatildi.");
     }
   };
 

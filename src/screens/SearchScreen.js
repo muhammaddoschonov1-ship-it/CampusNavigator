@@ -4,6 +4,7 @@ import {
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useIsFocused } from '@react-navigation/native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTheme } from '../theme/ThemeContext';
 import { useLanguage } from '../theme/LanguageContext';
 import { spacing, borderRadius, typography } from '../theme/colors';
@@ -100,8 +101,8 @@ export default function SearchScreen({ navigation, route }) {
   };
 
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDark ? 'light-content' : 'dark-content'} backgroundColor={colors.background} />
+    <SafeAreaView edges={['top']} style={styles.container}>
+      <StatusBar barStyle={isDark ? 'light-content' : 'dark-content'} backgroundColor={colors.background} translucent={false} />
       <Animated.View style={[styles.header, { opacity: fadeAnim }]}>
         <Text style={styles.title}>{t.searchTitle}</Text>
         <TouchableOpacity onPress={() => setShowFilterModal(true)}>
@@ -192,13 +193,13 @@ export default function SearchScreen({ navigation, route }) {
           </View>
         </View>
       </Modal>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const createStyles = (colors) =>
   StyleSheet.create({
-    container: { flex: 1, backgroundColor: colors.background, paddingTop: 60 },
+    container: { flex: 1, backgroundColor: colors.background, paddingTop: 16 },
     header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: spacing.lg, marginBottom: spacing.sm },
     title: { ...typography.hero, color: colors.textPrimary },
     searchContainer: { paddingHorizontal: spacing.lg, marginBottom: spacing.md },

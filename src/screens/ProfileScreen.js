@@ -16,18 +16,45 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { useIsFocused } from '@react-navigation/native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { doc, updateDoc } from 'firebase/firestore';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { db } from '../api/firebase';
 import { useTheme } from '../theme/ThemeContext';
 import { useLanguage } from '../theme/LanguageContext';
 import { spacing, borderRadius, typography } from '../theme/colors';
 import { getAllRooms } from '../api/roomsService';
 import { getFullSchedule } from '../api/scheduleService';
+import { requestNotificationPermissions, scheduleClassNotifications, sendTestNotification } from '../utils/notifications';
+import { checkForAllUpdates, CURRENT_APP_VERSION, getAppVersionDisplay } from '../utils/updateManager';
+
 export default function ProfileScreen({ navigation, user, onLogout }) {
   const { colors, isDark, toggleTheme } = useTheme();
   const { t, language, setLanguage } = useLanguage();
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const slideAnim = useRef(new Animated.Value(30)).current;
   const [notifications, setNotifications] = useState(true);
+  const [isCheckingUpdate, setIsCheckingUpdate] = useState(false);
+
+  const handleCheckUpdates = async () => {
+    if (isCheckingUpdate) return;
+    setIsCheckingUpdate(true);
+    try {
+      await checkForAllUpdates(false);
+    } catch (e) {
+      console.warn('Check update error:', e);
+    } finally {
+      setIsCheckingUpdate(false);
+    }
+  };
+
+  const handleToggleNotifications = async (val) => {
+    setNotifications(val);
+    if (val) {
+      const granted = await requestNotificationPermissions();
+      if (granted && user?.group) {
+        await scheduleClassNotifications(user.group);
+      }
+    }
+  };
   const [showLangModal, setShowLangModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
   
@@ -205,8 +232,8 @@ export default function ProfileScreen({ navigation, user, onLogout }) {
   const styles = createStyles(colors);
 
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDark ? 'light-content' : 'dark-content'} backgroundColor={colors.background} />
+    <SafeAreaView edges={['top']} style={styles.container}>
+      <StatusBar barStyle={isDark ? 'light-content' : 'dark-content'} backgroundColor={colors.background} translucent={false} />
 
       <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
         {/* Header */}
@@ -308,7 +335,7 @@ export default function ProfileScreen({ navigation, user, onLogout }) {
           <View style={styles.settingsCard}>
             <SettingRow icon="notifications-none" label={t.notifications} colors={colors}
               rightComponent={
-                <Switch value={notifications} onValueChange={setNotifications}
+                <Switch value={notifications} onValueChange={handleToggleNotifications}
                   trackColor={{ false: colors.surfaceHighlight, true: colors.primary + '50' }}
                   thumbColor={notifications ? colors.primary : colors.textMuted}
                 />
@@ -327,12 +354,26 @@ export default function ProfileScreen({ navigation, user, onLogout }) {
             <View style={styles.settingDivider} />
             <TouchableOpacity 
               activeOpacity={0.7}
+              onPress={handleCheckUpdates}
+              disabled={isCheckingUpdate}
+            >
+              <SettingRow 
+                icon="system-update" 
+                label={language === 'ru' ? 'Проверить обновления' : "Yangilanishlarni tekshirish"} 
+                value={isCheckingUpdate ? (language === 'ru' ? 'Проверка...' : 'Tekshirilmoqda...') : getAppVersionDisplay()} 
+                colors={colors} 
+              />
+            </TouchableOpacity>
+
+            <View style={styles.settingDivider} />
+            <TouchableOpacity 
+              activeOpacity={0.7}
               onPress={() => Alert.alert(
                 t.aboutApp,
-                "Campus Navigator\n\nVersiya: 1.0.0\n\nBu ilova universitet hududida binolar, o'quv xonalari va boshqa obyektlarni oson topish, xaritada harakatlanish va qisqa yo'llarni aniqlash uchun mo'ljallangan.\n\nYaratuvchi: Muhammadjon Doschonov"
+                `Campus Navigator\n\nVersiya: ${getAppVersionDisplay()}\n\nBu ilova universitet hududida binolar, o'quv xonalari va boshqa obyektlarni oson topish, xaritada harakatlanish va qisqa yo'llarni aniqlash uchun mo'ljallangan.\n\nYaratuvchi: Muhammadjon Doschonov`
               )}
             >
-              <SettingRow icon="info-outline" label={t.aboutApp} value="v1.0.0" colors={colors} />
+              <SettingRow icon="info-outline" label={t.aboutApp} value={getAppVersionDisplay()} colors={colors} />
             </TouchableOpacity>
           </View>
         </Animated.View>
@@ -415,7 +456,7 @@ export default function ProfileScreen({ navigation, user, onLogout }) {
         </View>
       </Modal>
 
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -441,7 +482,7 @@ const createStyles = (colors) =>
   StyleSheet.create({
     container: { flex: 1, backgroundColor: colors.background },
     scrollView: { flex: 1 },
-    scrollContent: { paddingTop: 60, paddingHorizontal: spacing.lg },
+    scrollContent: { paddingTop: 16, paddingHorizontal: spacing.lg },
     header: { marginBottom: spacing.lg },
     title: { ...typography.hero, color: colors.textPrimary },
     // Profile

@@ -105,7 +105,23 @@ export default function LoginScreen({ onLogin }) {
       if (result.success) {
         onLogin(result.user);
       } else {
-        Alert.alert('Xatolik', result.error);
+        // Local keshda mavjud bo'lsa, offline rejimda kirishni taklif qilish
+        try {
+          const local = await AsyncStorage.getItem('@local_user_' + email.trim().toLowerCase());
+          if (local) {
+            const parsed = JSON.parse(local);
+            Alert.alert(
+              'Offline rejim',
+              'Internet bilan bog\'lanishda xatolik yuz berdi. Qurilmangizda saqlangan profil orqali kirmaysizmi?',
+              [
+                { text: 'Bekor qilish', style: 'cancel' },
+                { text: 'Kirish', onPress: () => onLogin(parsed) }
+              ]
+            );
+            return;
+          }
+        } catch (e) {}
+        Alert.alert('Kirishda xatolik', result.error);
       }
     } else {
       const savedName = await AsyncStorage.getItem('localName_' + email.trim());
@@ -129,7 +145,7 @@ export default function LoginScreen({ onLogin }) {
       return;
     }
     if (!email.trim() || !email.includes('@')) {
-      Alert.alert('Xatolik', 'Iltimos, to\'g\'ri Gmail pochta manzilini kiriting (@ belgisi bo\'shart)');
+      Alert.alert('Xatolik', 'Iltimos, to\'g\'ri Gmail pochta manzilini kiriting (@ belgisi bo\'lishi shart)');
       return;
     }
     if (!group.trim()) {
@@ -174,9 +190,9 @@ export default function LoginScreen({ onLogin }) {
 
       if (result.success) {
         Alert.alert(
-          'Muvaffaqiyat! ✅',
-          'Ro\'yxatdan o\'tdingiz! Endi tizimga kirishingiz mumkin.',
-          [{ text: 'OK', onPress: () => toggleMode() }]
+          'Muvaffaqiyat! 🎉',
+          `Xush kelibsiz, ${name.trim()}! Ro'yxatdan muvaffaqiyatli o'tdingiz.`,
+          [{ text: 'Boshlash', onPress: () => onLogin(result.user) }]
         );
       } else {
         Alert.alert('Xatolik', result.error);

@@ -25,8 +25,8 @@
       "permissions": [
         "ACCESS_COARSE_LOCATION",
         "ACCESS_FINE_LOCATION",
-        "ACCESS_COARSE_LOCATION",
-        "ACCESS_FINE_LOCATION"
+        "POST_NOTIFICATIONS",
+        "VIBRATE"
       ]
     },
     "extra": {
@@ -35,12 +35,29 @@
       }
     },
     "plugins": [
-      "expo-font"
+      "expo-font",
+      "expo-updates",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Universitet hududida xonagacha marshrut chizish uchun joylashuvingizdan foydalaniladi."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color": "#6C63FF"
+        }
+      ]
     ],
     "runtimeVersion": {
       "policy": "appVersion"
     },
     "updates": {
+      "enabled": true,
+      "checkAutomatically": "ON_LOAD",
+      "fallbackToCacheTimeout": 1500,
       "url": "https://u.expo.dev/b6bb3ae6-ecf6-41f5-94c1-445160e74018"
     },
     "ios": {}
